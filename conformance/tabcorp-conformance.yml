@@ -1,0 +1,10 @@
+generated: '2026-10-22'
+method: searched
+source: https://web.archive.org/web/20170219083237/https://studio.tab.com.au/intro/authentication.html
+standards:
+- id: oauth2
+  conforms: true
+  evidence: "'the Digital API uses OAuth 2.0 as an authorisation standard' with client_credentials, password, authorization_code and refresh_token grants at https://api.beta.tab.com.au/oauth/token (archived TAB Studio docs, Feb 2017)."
+- id: rfc9457
+  conforms: false
+  evidence: "Errors use a custom {\"error\": {\"code\", \"message\"}} envelope (https://studio.tab.com.au/intro/error-handling.html, archived Feb 2017), not application/problem+json."

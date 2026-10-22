@@ -1,0 +1,38 @@
+generated: '2026-10-22'
+method: searched
+source: https://web.archive.org/web/20170219083135/https://studio.tab.com.au/intro
+description: "Cross-cutting conventions from the TAB Studio intro pages (REST, format, authentication, caching, hypermedia, error handling, versioning). Live TAB Studio docs (www.studio.tab.com.au) answered 403 Akamai Access Denied (geo-restricted) on 2026-10-22; content read from the Internet Archive snapshot of the provider's own docs, captured February 2017, and may be out of date."
+base_url: https://api.beta.tab.com.au
+api_style: REST, JSON, hypermedia (start page links to capabilities)
+authentication:
+  scheme: OAuth 2.0 bearer token
+  docs: https://studio.tab.com.au/intro/authentication.html
+  detail: See authentication/tabcorp-authentication.yml and scopes/tabcorp-scopes.yml.
+idempotency:
+  coverage: none
+  supported: false
+  note: "No idempotency key or replay-protection mechanism is described on the archived intro pages; per-service betting docs (which may cover bet placement) were not retrievable, so this is 'not documented in what could be read'."
+reversibility:
+  status: undocumented
+  surfaces: []
+  note: "The API exposes bet placement, deposits and withdrawals (features page) but no cancel/void/reverse operation or window is stated on any page that could be read."
+pagination:
+  style: undocumented
+versioning:
+  scheme: major version in path (/v1)
+  docs: https://studio.tab.com.au/intro/versioning.html
+  detail: See lifecycle/tabcorp-lifecycle.yml.
+error_envelope:
+  media_type: application/json
+  rfc9457: false
+  shape: '{ "error": { "code": "...", "message": "..." } }'
+  docs: https://studio.tab.com.au/intro/error-handling.html
+  detail: See errors/tabcorp-error-codes.yml.
+caching:
+  detail: "Most GET requests are cacheable for some amount of time. Each API response contains Cache-control (e.g. max-age=10) and Expires headers."
+  docs: https://studio.tab.com.au/intro/caching.html
+format:
+  detail: "The digital API accepts and returns data in JSON format. New request fields will always be optional with sensible defaults; the API will never remove existing response fields or change a field's meaning or format, but may add new fields."
+  docs: https://studio.tab.com.au/intro/format.html
+rate_limit_signaling:
+  detail: No rate limits or rate-limit headers are documented on the readable pages.

@@ -1,23 +1,97 @@
 aid: tabcorp
+
 name: Tabcorp
-description: 'Tabcorp is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Tabcorp Holdings Limited is an ASX-listed (TAH) Australian wagering, media and gaming services company headquartered in Melbourne. Its Wagering and Media business runs the TAB brand (totalisator and fixed-odds betting through retail venues, online, mobile and phone channels) and Sky Racing television and Sky Sports Radio; its Gaming Services business operates under the MAX brand, monitoring electronic gaming machines for regulators and supplying and maintaining venue gaming systems. Its former Lotteries and Keno arm was demerged in 2022 as The Lottery Corporation. Tabcorp publishes open-source technology projects through its GitHub organization and runs the TAB Studio developer portal (studio.tab.com.au) for the TAB API at api.beta.tab.com.au, both geo-restricted to licensed jurisdictions. Surfaced via the API Evangelist harvest backlog (australia-apidays-2026).
+
 url: https://raw.githubusercontent.com/api-evangelist/tabcorp/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Wagering
+- Betting
+- Gaming
+- Media
+- Racing
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://avatars.githubusercontent.com/u/29614885?v=4
+
 common:
+- type: Conventions
+  url: conventions/tabcorp-conventions.yml
+- type: Authentication
+  url: authentication/tabcorp-authentication.yml
+- type: OAuthScopes
+  url: scopes/tabcorp-scopes.yml
+- type: Deprecation
+  url: https://studio.tab.com.au/intro/versioning.html
+- type: Lifecycle
+  url: lifecycle/tabcorp-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/tabcorp-error-codes.yml
+- type: Conformance
+  url: conformance/tabcorp-conformance.yml
+- type: Hosts
+  url: hosts/tabcorp-hosts.yml
+- type: Vendors
+  url: vendors/tabcorp-vendors.yml
+- type: DomainSecurity
+  url: security/tabcorp-domain-security.yml
 - type: Website
   url: https://tabcorp.com.au/
+- type: GitHubOrganization
+  url: https://github.com/tabcorp
+
+apis:
+- aid: tabcorp:tab-studio-api
+  name: TAB Studio API
+  description: TAB Studio is Tabcorp's developer portal for the TAB wagering API, a hypermedia API whose start page at https://api.beta.tab.com.au links to its capabilities and resources (per the TAB Studio concepts/hypermedia docs page), with racing information served under /v1/tab-info-service/. Both the portal and the API host are geo-restricted by Akamai to licensed jurisdictions; access requires an application through TAB Studio. No machine-readable contract (OpenAPI, AsyncAPI, GraphQL, gRPC or WSDL) could be retrieved.
+  humanURL: https://www.studio.tab.com.au/
+  baseURL: https://api.beta.tab.com.au
+  tags:
+  - Wagering
+  - Racing
+  - Betting
+  properties:
+  - type: Documentation
+    url: https://www.studio.tab.com.au/docs/default/docs/concepts/hypermedia.md
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: tabcorp.com.au (Akamai, 23.216.132.71) accepted TLS but returned no HTTP response to plain, browser-UA or headless-render GETs from our network on 2026-10-22 (also unreachable in preflight); kept as Website because github.com/tabcorp declares it as the org website. Not recorded as dead or blocked. No developer portal, docs or API pointers found.
+  evidence:
+  - url: https://tabcorp.com.au/
+    status: 0
+  - url: https://www.tabcorp.com.au/
+    status: 0
+  - url: https://github.com/tabcorp
+    status: 200
+  - url: https://api.github.com/orgs/tabcorp
+    status: 200
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 16
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

@@ -1,0 +1,47 @@
+name: Tabcorp MCP Server
+type: MCPServer
+provider: tabcorp
+generated: '2026-10-22'
+method: searched
+status: none-official
+source:
+- https://glama.ai/mcp/servers/@bencousins22/tab-mcp
+- https://github.com/bencousins22/tab-mcp
+- https://www.studio.tab.com.au/.well-known/mcp.json
+description: >-
+  No official Tabcorp/TAB MCP server was found. Tabcorp's developer portal (TAB Studio,
+  www.studio.tab.com.au) is geo-restricted and returned 403 (Akamai "Access Denied") to
+  /llms.txt and /.well-known/mcp.json from our network on 2026-10-22, and pre-flight contract
+  discovery found no MCP endpoint on tabcorp.com.au. No OpenAPI contract is held in this
+  repo, so no candidate tool list could be derived from operations. The only MCP server
+  found is a THIRD-PARTY community project, recorded below and not attributed to Tabcorp.
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+probes:
+- url: https://www.studio.tab.com.au/.well-known/mcp.json
+  status: 403
+- url: https://www.studio.tab.com.au/llms.txt
+  status: 403
+tools: []
+third_party:
+- name: tab-mcp (bencousins22)
+  official: false
+  repository: https://github.com/bencousins22/tab-mcp
+  listing: https://glama.ai/mcp/servers/@bencousins22/tab-mcp
+  endpoint_claimed: https://server.smithery.ai/@bencousins22/tab-mcp/mcp
+  framework: FastMCP, hosted on Smithery
+  upstream_base_url: https://api.beta.tab.com.au
+  last_pushed: '2025-10-29'
+  tool_count_claimed: 28
+  tool_categories_claimed:
+  - OAuth Authentication (3)
+  - Racing API (10)
+  - Sports API (7)
+  - Sports Results (4)
+  - FootyTAB (2)
+  - Generic API (2)
+  note: >-
+    Community project, per its README (fetched 2026-10-22, HTTP 200). Not called by us; the
+    endpoint and tool counts are the author's claims. Not a Tabcorp-published agent surface.

@@ -1,0 +1,16 @@
+generated: '2026-10-22'
+method: searched
+source: https://web.archive.org/web/20170219083305/https://studio.tab.com.au/intro/versioning.html
+note: "Live TAB Studio docs (www.studio.tab.com.au) answered 403 Akamai Access Denied (geo-restricted) on 2026-10-22; content read from the Internet Archive snapshot of the provider's own docs, captured February 2017, and may be out of date."
+versioning:
+  scheme: major-version-in-path
+  current: v1
+  example: https://api.beta.tab.com.au/v1
+  docs: https://studio.tab.com.au/intro/versioning.html
+  notes: "The digital API is currently in version 1. This is the first stable version, and no breaking changes will be made. The API will be versioned with a major version scheme, potentially introducing /v2 in the future. Responses: the API will never remove existing fields from any resources (format page)."
+deprecation:
+  policy_url: https://studio.tab.com.au/intro/versioning.html
+  sunset_header: null
+  notes: "A new major version would be announced in advance, with Tabcorp supporting both versions for an extended period of time, while clients have time to upgrade any code. No dated support window is stated."
+status_page: null
+deprecated_operations: []

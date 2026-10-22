@@ -1,0 +1,32 @@
+generated: '2026-10-22'
+method: searched
+source: https://web.archive.org/web/20170219083302/https://studio.tab.com.au/intro/error-handling.html
+docs: https://studio.tab.com.au/intro/error-handling.html
+note: "Shared error codes only; the docs say each service maintains its own list in its service documentation, which was not retrievable. HTTP statuses per code are not stated (only that errors are 4xx or 5xx). Live TAB Studio docs (www.studio.tab.com.au) answered 403 Akamai Access Denied (geo-restricted) on 2026-10-22; content read from the Internet Archive snapshot of the provider's own docs, captured February 2017, and may be out of date."
+format: custom-json
+envelope:
+  shape: '{ "error": { "code": "SERVICE_UNAVAILABLE_ERROR", "message": "Betting is not available" } }'
+  code_field: error.code
+  message_field: error.message
+  detail: "The code field is a standard value from a list of all possible errors. Programs should not rely on parsing message as it might change without notice."
+problems:
+- status: 5xx
+  title: SERVICE_UNAVAILABLE_ERROR
+  type: SERVICE_UNAVAILABLE_ERROR
+  description: if the service is temporarily down
+- status: 4xx
+  title: RESOURCE_NOT_FOUND_ERROR
+  type: RESOURCE_NOT_FOUND_ERROR
+  description: if the given resource does not exist
+- status: 4xx
+  title: AUTHENTICATION_REQUIRED_ERROR
+  type: AUTHENTICATION_REQUIRED_ERROR
+  description: if API tokens are not provided
+- status: 4xx
+  title: INVALID_TOKEN_ERROR
+  type: INVALID_TOKEN_ERROR
+  description: if API tokens are not valid
+- status: 4xx
+  title: INVALID_PAYLOAD_ERROR
+  type: INVALID_PAYLOAD_ERROR
+  description: if a request format is not valid

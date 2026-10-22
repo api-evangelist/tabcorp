@@ -1,0 +1,74 @@
+generated: '2026-10-22'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 1
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - other
+  - source
+  - website
+hosts:
+- host: api.beta.tab.com.au
+  found_by:
+  - apis[]
+  - vendor-detect
+  types: []
+  serves:
+  - api
+  - cdn
+  vendor: akamai
+  registrable_domain: tab.com.au
+  role: api
+  relation: other-domain
+- host: api.com.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.com.au
+  role: api
+  relation: other-domain
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: studio.tab.com.au
+  found_by:
+  - pointer
+  types:
+  - Deprecation
+  serves: []
+  registrable_domain: tab.com.au
+  role: other
+  relation: other-domain
+- host: tabcorp.com.au
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  serves: []
+  registrable_domain: tabcorp.com.au
+  role: website
+  relation: own
+- host: www.studio.tab.com.au
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - docs
+  registrable_domain: tab.com.au
+  role: other
+  relation: other-domain

@@ -1,0 +1,10 @@
+generated: '2026-10-22'
+method: none
+note: "No first-party client library for the TAB Studio / Digital API was found. Checked npm (registry search 'tabcorp', npm/pypi names tabcorp, tab-api, tabcorp-api: 404), NuGet search (no results) and the github.com/tabcorp org (113 repos). The org and npm publish general-purpose open-source utilities (strummer, redis-rate-limiter, clever-buffer, require-lint, tabcorp-cucumber-protractor-framework-v2/v3) that are not API clients, so they are not recorded as SDKs. The geo-restricted docs portal (403) may list code samples that could not be read."
+checked:
+- https://registry.npmjs.org/-/v1/search?text=tabcorp
+- https://registry.npmjs.org/tabcorp
+- https://pypi.org/pypi/tabcorp/json
+- https://azuresearch-usnc.nuget.org/query?q=tabcorp
+- https://api.github.com/orgs/tabcorp/repos
+packages: []

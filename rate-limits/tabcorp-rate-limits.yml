@@ -1,0 +1,10 @@
+name: Tabcorp rate limits
+generated: '2026-10-22'
+method: none
+limit_count: 0
+note: "No rate limits or rate-limit headers are documented on any readable TAB Studio page (archived Feb 2017 intro pages: REST, format, authentication, caching, hypermedia, error handling, versioning). The caching page documents Cache-control: max-age=10 and Expires headers only. The live portal returned 403 (geo-restricted) on 2026-10-22."
+checked:
+- https://web.archive.org/web/20170219083135/https://studio.tab.com.au/intro
+- https://web.archive.org/web/20170219083254/https://studio.tab.com.au/intro/caching.html
+- https://www.studio.tab.com.au/
+limits: []

@@ -1,0 +1,15 @@
+name: Tabcorp pricing
+generated: '2026-10-22'
+method: none
+audience: unclear
+pricing_basis: none
+published: false
+plan_count: 0
+note: "No API pricing or plans are published. The archived TAB Studio pages (Feb 2017) describe access as by application: TAB account holders may register for personal use and commercial users register their details; the engine is made available 'to approved applicants'. The live portal www.studio.tab.com.au returned 403 (geo-restricted) on 2026-10-22."
+checked:
+- https://www.studio.tab.com.au/
+- https://web.archive.org/web/20170204232451/https://studio.tab.com.au/
+- https://web.archive.org/web/20170219083130/https://studio.tab.com.au/features
+delivery:
+  model: managed
+plans: []
